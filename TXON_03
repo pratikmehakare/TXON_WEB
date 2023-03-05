@@ -1,0 +1,96 @@
+<!--TO DO LIST-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+    <style>
+      /* CSS styles go here */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+        text-shadow: 1px 2px 5px grey;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: space-between;
+      }
+      .completed {
+        text-decoration: line-through;
+        opacity: 0.5;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        background-color:blue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <form>
+      <input type="text" id="new-item" placeholder="Enter new task" required>
+      <input type="submit" value="Add">
+    </form>
+    <ul id="todo-list">
+      <!-- list items will be added dynamically here -->
+    </ul>
+    <script>
+      // JavaScript code goes here
+      const form = document.querySelector('form');
+      const input = document.querySelector('#new-item');
+      const ul = document.querySelector('#todo-list');
+      
+      form.addEventListener('submit', (event) => {
+        event.preventDefault(); // prevent form submission
+        const text = input.value.trim(); // remove whitespace
+        if (text !== '') {
+          const li = document.createElement('li');
+          li.textContent = text;
+          const button = document.createElement('button');
+          button.textContent = 'Delete';
+          button.addEventListener('click', () => {
+            li.remove();
+          });
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.addEventListener('change', () => {
+            li.classList.toggle('completed');
+          });
+          li.appendChild(checkbox);
+          li.appendChild(button);
+          ul.appendChild(li);
+          input.value = ''; // clear input field
+        }
+      });
+    </script>
+  </body>
+</html>
