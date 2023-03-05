@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Landing Page</title>
+    <style>
+      /* CSS styles go here */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        font-size: 48px;
+      }
+      nav {
+        background-color: #ccc;
+        padding: 10px;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav li {
+        margin: 0 10px;
+      }
+      nav a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+      }
+      section img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Landing Page</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <section>
+      <img src="https://picsum.photos/800/500" alt="Placeholder image">
+    </section>
+    <footer>
+      <p>&copy; 2023 My Landing Page</p>
+    </footer>
+  </body>
+</html>
